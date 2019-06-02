@@ -36,6 +36,14 @@ addVotes(index){
 minusVotes(index){
   this.quotes[index].vote -=1
 }
+addNewQuote(quote){
+  let quoteLength = this.quotes.length;
+  quote.id=quoteLength+1;
+  quote.Date = new Date(quote.date)
+  this.quotes.push(quote)
+
+}
+
 
   constructor() { }
 

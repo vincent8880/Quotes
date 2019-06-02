@@ -1,26 +1,36 @@
 <div class="container-fluid">
   <div class="row">
-      <form #goalForm='ngForm'>
+      <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+          <!-- Name Form -->
           <div class="form-group">
-
               <label for="name">Name</label>
-              <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name">
-          <!--Testing  to see if we get data-->
-              Display {{newQuote.name}}
+              <input type="text"  class="form-control" id="name" [(ngModel)]="newQuote.description" name="name" #decription="ngModel" required>
 
+              <div [hidden]="description.valid ||description.pristine" class="alert alert-danger">
+                  <p> Author is Required</p>
+
+              </div>
           </div>
+          <!-- Description Input -->
           <div class="form-group">
+              <label for="description">quote</label>
+              <textarea class="form-control" id="description" rows="4" [(ngModel)]="newQuote.name" name="description" #name="ngModel" required></textarea>
+              <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                  <p> Description is Required</p>
 
-              <label for="description">Description</label>
-              <textarea class="form-control" id="description" rows="4" required></textarea>
+              </div>
 
           </div>
+          <!-- Date Input -->
           <div class="form-group">
               <label for="complete">Completion</label>
-              <input type='date' id="complete" required>
+              <input type='date' id="complete" [(ngModel)]="newQuote.date" name="Date" #date="ngModel" required >
+              <div [hidden]="date.valid || date.pristine" class="alert alert-danger">
+                  <p> Complete Date is Required</p>
 
+              </div>
           </div>
-          <button type="submit" class="btn btn-success btn-lg">Add Goal</button>
+          <button type="Submit" class="btn btn-success btn-lg">Add Quote</button>
       </form>
   </div>
 </div>
