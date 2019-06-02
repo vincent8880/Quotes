@@ -39,7 +39,6 @@ addVotes(index){
 minusVotes(index){
   if(this.quotes[index].vote > 0)this.quotes[index].vote -= 1;
   else this.quotes[index].vote = 0;
-  // console.log(this.newQuotes[index].vote);
 }
 addNewQuote(quote){
   let quoteLength = this.quotes.length;
