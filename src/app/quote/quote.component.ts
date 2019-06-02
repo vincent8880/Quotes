@@ -9,6 +9,7 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
+  public maxCount =0;
   quotes = [
     new Quote(1, 'Give light and people will find the way', 'Ella Baker',0,new Date(2019,6,2)),
     new Quote(2, 'One could not pluck a flower without troubling a star', 'Loren Eiseley',0,new Date(2019,6,2)),
@@ -31,10 +32,14 @@ deleteGoal(isComplete,index){
   }
 }
 addVotes(index){
-  this.quotes[index].vote += 1
+  this.quotes[index].vote += 1;
+  if(this.quotes[index].vote > this.maxCount) this.maxCount=this.quotes[index].vote;
+  else if (this.quotes[index].vote <= this.maxCount) console.log(this.maxCount);
 }
 minusVotes(index){
-  this.quotes[index].vote -=1
+  if(this.quotes[index].vote > 0)this.quotes[index].vote -= 1;
+  else this.quotes[index].vote = 0;
+  // console.log(this.newQuotes[index].vote);
 }
 addNewQuote(quote){
   let quoteLength = this.quotes.length;
