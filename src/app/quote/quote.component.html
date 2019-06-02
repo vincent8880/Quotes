@@ -14,11 +14,13 @@
   <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteGoal($event,i)'></app-quote-details>
 
   </div>
-  <div class="container">
-    <div class="row">
-        <app-goal-form></app-goal-form>
-    </div>
-</div>
+
 </ul>
+<div class="container">
+  <div class="row">
+      <app-quote-form></app-quote-form>
+  </div>
+</div>
+
 
 
