@@ -3,7 +3,7 @@
 
 <ul>
   <div *ngFor='let quote of quotes;let i=index'>
-  <li>{{quote.name}}</li>
+  <li appHighlight>{{quote.name}}</li>
   <button  (click)='toogleDetails(i)'>Details</button>
   <button class="btn btn-success" (click)="addVotes(i)">
     <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
