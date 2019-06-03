@@ -6,6 +6,9 @@
 }
 #con{
   text-align: center;
+  padding:0;
+  background-color: #222;
+  color:white;
 
 }
 #fun{
