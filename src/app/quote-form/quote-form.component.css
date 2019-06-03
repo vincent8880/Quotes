@@ -1,0 +1,19 @@
+input,
+textarea {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: rgba(70, 69, 69, 0.562);
+  color: white;
+
+}
+textarea{
+  height:160px;
+}
+.input{
+  width:600px;
+}
+@media (max-width: 999px){
+  .col-md-6{
+      max-width: 100%;
+  }
+}
