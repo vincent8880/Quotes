@@ -9,7 +9,7 @@ import {Quote} from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  public maxCount =0;
+ public maxCount=0;
   quotes = [
     new Quote(1, 'Give light and people will find the way', 'Ella Baker',0,new Date(2019,6,2)),
     new Quote(2, 'One could not pluck a flower without troubling a star', 'Loren Eiseley',0,new Date(2019,6,2)),
@@ -19,6 +19,7 @@ export class QuoteComponent implements OnInit {
     new Quote(6, 'Reach for it, push yourself as far as you can', 'Christa McAullife',0,new Date(2019,6,2)),
 
 ];
+
 toogleDetails(index){
   this.quotes[index].showDescription = !this.quotes[index].showDescription;
 }
