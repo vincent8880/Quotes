@@ -1,33 +1,34 @@
 <div class="container">
+   <div class="row">
+      <div class="col-md-12">
+     <h1>Quotes</h1>
+        <hr>
+      </div>
 
-<h1>Quotes</h1>
-<hr>
 
-<ul>
-  <div *ngFor='let quote of quotes;let i=index'>
+  <div  class="col-md-4 content" *ngFor='let quote of quotes;let i=index'>
       <div id="{{i}}" appHighlight *ngIf="quote.vote===maxCount && quote.vote>0">
 
         </div>
         <div>
-    <li >{{quote.name}}</li>
+    <h4 >{{quote.name}}</h4>
   <p id="{{i}}">{{quote.date|dateCount}} days ago</p>
   <button  (click)='toogleDetails(i)'>Details</button>
-  <button class="btn btn-success" (click)="addVotes(i)">
-    <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
+  <button  (click)="addVotes(i)">
+      <i class="fa fa-thumbs-up" style="font-size:22px;color:white"></i>
   </button>
-  <button class="btn btn-danger" (click)="minusVotes(i)">
+  <button id="fun" class="btn btn-danger" (click)="minusVotes(i)">
     <i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i>
   </button>
   <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteGoal($event,i)'></app-quote-details>
 </div >
   </div>
-
-</ul>
 </div>
-<div class="container">
+</div>
+<div class="container-fluid" id="con">
 
-  <div class="row">
-      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+  <div class="incomingform">
+      <app-quote-form class="form" (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>
 
 </div>
