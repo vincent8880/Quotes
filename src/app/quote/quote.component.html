@@ -12,18 +12,19 @@
 
         </div>
         <div>
-    <h4 >{{quote.name}}</h4>
+    <p class="afg">{{quote.name}}</p>
   <p id="{{i}}">{{quote.date|dateCount}} days ago</p>
-  <button  (click)='toogleDetails(i)'>Details</button>
-  <button  (click)="addVotes(i)">
-      <i class="fa fa-thumbs-up" style="font-size:22px;color:white"></i>
+  <button class="btn btn-dark"  (click)='toogleDetails(i)'>Details</button><br/>
+  <button class="btn btn-success"  (click)="addVotes(i)">
+    <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
   </button>
-  <button id="fun" class="btn btn-danger" (click)="minusVotes(i)">
+  <button  class="btn btn-danger" (click)="minusVotes(i)">
     <i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i>
   </button>
   <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteGoal($event,i)'></app-quote-details>
 </div >
   </div>
+</div>
 </div>
 </div>
 <div class="container-fluid" id="con">
@@ -33,6 +34,6 @@
   </div>
 
 </div>
-</div>
+
 
 
