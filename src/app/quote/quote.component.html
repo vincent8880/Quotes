@@ -8,7 +8,7 @@
 
 
   <div  class="col-md-4 content" *ngFor='let quote of quotes;let i=index'>
-      <div id="{{i}}" appHighlight *ngIf="quote.vote===maxCount && quote.vote>0">
+      <div id="{{i}}" appHighlight *ngIf="quotes.vote===maxCount && quotes.vote>0">
 
         </div>
         <div>
