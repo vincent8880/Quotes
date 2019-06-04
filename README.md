@@ -30,3 +30,4 @@ No bugs so far. If found, email me at ododovincent54@gmail.com
 ## Support and contact details
 Contact me on ododovincent54@gmail.com for any comments, reviews or advice.
 ### License
+https://github.com/vincent8880/Quotes/search?q=LICENSE.&unscoped_q=LICENSE.
