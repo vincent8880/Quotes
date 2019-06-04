@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Quote} from '../quote'
+import { MaxLengthValidator } from '@angular/forms';
 
 
 
@@ -32,6 +33,8 @@ deleteGoal(isComplete,index){
       }
   }
 }
+
+
 addVotes(index){
   this.quotes[index].vote += 1;
   if(this.quotes[index].vote > this.maxCount) this.maxCount=this.quotes[index].vote;
@@ -48,6 +51,18 @@ addNewQuote(quote){
   this.quotes.push(quote)
 
 }
+highlightingFunction(index) {
+  const check = this.quotes[index].vote;
+  if (this.quotes.length > 0) {
+    const votes = [];
+  this.quotes.forEach(quote => votes.push(quote.vote));
+  if (check === Math.max(...votes)) {
+    return true;
+  }
+  }
+
+}
+
 
 
   constructor() { }

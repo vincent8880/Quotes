@@ -8,13 +8,12 @@
 
 
   <div  class="col-md-4 content" *ngFor='let quote of quotes;let i=index'>
-      <div id="{{i}}" appHighlight *ngIf="quotes.vote===maxCount && quotes.vote>0">
 
-        </div>
         <div>
-    <p class="afg">{{quote.name}}</p>
-  <p id="{{i}}">{{quote.date|dateCount}} days ago</p>
-  <button class="btn btn-dark"  (click)='toogleDetails(i)'>Details</button><br/>
+ <p id="{{i}}" class="afg" appHighlight *ngIf= 'highlightingFunction(i) && quote.vote>0'>{{quote.name}}</p>
+ <p id="{{i}}" class="afg" *ngIf= '!highlightingFunction(i) || quote.vote===0'>{{quote.name}}</p>
+  <p id="{{i}}"class="afg">{{quote.date|dateCount}} days ago</p>
+  <button class="btn btn-dark "  (click)='toogleDetails(i)'>Details</button><br/>
   <button class="btn btn-success"  (click)="addVotes(i)">
     <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"></i>
   </button>
